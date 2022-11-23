@@ -1,0 +1,30 @@
+import React, { useState } from "react";
+
+const CounterHooks = ({ initialCount }) => {
+  const [count, setCount] = useState(initialCount);
+  return (
+    <div>
+      <button
+        onClick={() =>
+          count <= 0
+            ? setCount((prevCount) => prevCount)
+            : setCount((prevCount) => prevCount - 1)
+        }
+      >
+        -
+      </button>
+      <span>{count}</span>
+      <button
+        onClick={() =>
+          count >= 10
+            ? setCount((prevCount) => prevCount)
+            : setCount((prevCount) => prevCount + 1)
+        }
+      >
+        +
+      </button>
+    </div>
+  );
+};
+
+export default CounterHooks;
